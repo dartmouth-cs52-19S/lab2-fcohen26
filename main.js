@@ -1,16 +1,20 @@
 $('#done_button').on('click', function(e) {
-    // gather all checked radio-button values
     var choices = $("input[type='radio']:checked").map(function(i, radio) {
       return $(radio).val();
     }).toArray();
-    // now you have an array of choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
-    // you'll need to do some calculations with this
-    // a naive approach would be to just choose the most common option - seems reasonable
-    // https://www.w3resource.com/javascript-exercises/javascript-array-exercise-8.php
+    // Adapted from https://www.w3resource.com/javascript-exercises/javascript-array-exercise-8.php
     console.log(choices)
     var highest_count = 0;
     var item_count = 0;
     var item;
+
+    choices.push(choices[1]);
+    choices.push(choices[2]);
+    choices.push(choices[2]);
+    choices.push(choices[3]);
+    choices.push(choices[3]);
+    choices.push(choices[3]);
+
     for (var i=0; i<choices.length; i++)
     {
         for (var j=i; j<choices.length; j++)
@@ -28,7 +32,7 @@ $('#done_button').on('click', function(e) {
         item_count=0;
     }
 console.log(item+" ( " + highest_count +" times ) ") ;
-if (choices.length == 4)
+if (choices.length == 10)
 {
     var image = $("img.answer_image");
     image.show();
@@ -38,9 +42,7 @@ if (choices.length == 4)
     $("p.answer_blurb").html("You are one of Dartmouth's most iconic buildings! Beautiful, photogenic and historic, you are a core feature of the campus.");
 
     $("img.answer_image").attr("src", "/img/DartHall.jpg")
-    // $("img.answer_img").html(/img/DartHall.jpg);
     
-
   }
   if (item == "Rauner") {
     $("p.answer_text").html("Rauner Library");
@@ -63,13 +65,13 @@ if (choices.length == 4)
   }
   if (item == "Novack") {
     $("p.answer_text").html("Novack");
-    $("p.answer_blurb").html("Perfect for a quick bite, you are a popular favorite spot for students. Open all night, you are a beloved spot for long nights of work.");
+    $("p.answer_blurb").html("Perfect for a quick bite, you are a popular favorite spot for students. Open all night, you are particularly good at pulling all-nighters.");
     $("img.answer_image").attr("src", "/img/Novack.jpg")
 
   }
   if (item == "Baker") {
     $("p.answer_text").html("Baker Library");
-    $("p.answer_blurb").html("Perhaps the most iconic building on the campus, you stand out in the spotlight.");
+    $("p.answer_blurb").html("Perhaps the most iconic building on the campus, you stand out and love the spotlight.");
     $("img.answer_image").attr("src", "/img/Baker.jpg")
 
   }
@@ -79,48 +81,33 @@ if (choices.length == 4)
     image.hide();
 }
 });
-// Get the modal
 var modal = document.getElementById('modal');
 
-// Get the button that opens the modal
 var btn = document.getElementById("done_button");
 
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal 
 btn.onclick = function() {
-    // modal.style.display = "block";
     $(modal).animate({
       opacity: 1,
-      // left: "+=50",
       height: "toggle",
       width: "toggle"
     }, 300, function(){
 
     });
     $(modal).show();
-
-    // $(modal).removeClass("inactive")
-    // $(modal).addClass("active");
   };
 
-  // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
   }
   
-  // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   }
 
-//   var answer = $( "#answer_display" );
-// $( "#done_button" ).on( "click", function( event ) {
-//   answer.show();
-// });
 $(document).ready(function() {
   var header = document.getElementsByClassName("header")
   $(header).animate({

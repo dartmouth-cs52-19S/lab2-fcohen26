@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 .header {
-    /* height: 300px; */
     height: 0px;
     width: 100%;
     text-align: center;
@@ -249,7 +248,7 @@ p {
     width: 500px;
     height: 250px;
 }
-/* https://codemyui.com/gradient-buttons-with-glint-on-hover/ */
+/* Adapted from https://codemyui.com/gradient-buttons-with-glint-on-hover/ */
 .done_button {
     width: 900px;
     height: 200px;
@@ -265,14 +264,12 @@ p {
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    /* background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673); */
     background-image: linear-gradient(to left, #BF8798, #E0BCC9, #E2D0DF, #E0BCC9);
 
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
 .done_button:hover {
     background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
@@ -280,7 +277,7 @@ p {
 .done_button:focus {
     outline: none;
 }
-/* https://www.w3schools.com/howto/howto_css_modals.asp */
+/* Adapted from https://www.w3schools.com/howto/howto_css_modals.asp */
 #modal {
     display: none;
     position: fixed;
@@ -290,16 +287,8 @@ p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-
-    /* transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: linear;
-    transform: scale(1) rotate(360deg); */
-
-
-    /* transform: scale(2) rotate(360deg); */
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 .answer_display {
     display: flex;
@@ -311,35 +300,13 @@ p {
     border: 1px solid #888;
     width: 80%; 
     color: black;
-    /* transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: linear;
-    transform: scale(1) rotate(360deg); */
-    
-    /* transform: scale(0) rotate(720deg);
-	opacity: 0;
-    transition: all 0.5s;
-    transform: scale(1) rotate(0deg);
-    opacity: 1; */
-    /* transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: linear; */
 }
-/* The Close Button */
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-/* .active {
-    background-color: blue;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: linear;
-    transform: scale(1) rotate(720deg);
-} */
-  
   .close:hover,
   .close:focus {
     color: black;
@@ -349,7 +316,6 @@ p {
 .answer_text {
     color: black;
     font-size: 100px;
-    /* align-self: flex-end; */
 }
 .answer_blurb_text {
     display: flex;
@@ -365,17 +331,11 @@ p {
         width: 150px;
     }
     .text_answer {
-        /* background-color: #FFE4FA; */
         height: 150px;
         width: 150px;
     }
     #dr_seuss_choices.choices {
         font-size: 18px;
-        /* color: black;
-        font-weight: 900; */
-        /* color: black;
-        opacity: 0.8;
-        line-height: 1; */
     }
     .choices {
         font-size: 30px;
@@ -396,11 +356,3 @@ p {
         font-size: 50px;
     }
 }
-
-
-/* .text_label {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-direction: row;
-} */
