@@ -49,7 +49,6 @@ input[type=radio]:checked ~ img {
     background-image: url(img/animal.png);
 }
 .question#dr_seuss_question {
-    width: 0px;
     background-image: url(img/seuss.jpg);
 
 }
